@@ -75,6 +75,7 @@ body {
 #pictures img:nth-child(1) {
   height: 600px;
   width: 480px;
+  border-radius: 15px;
 }
 
 #pictures img:nth-child(2) {
