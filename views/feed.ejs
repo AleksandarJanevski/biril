@@ -16,6 +16,18 @@
     <aside id="form">
       <a href="/form">Add New BeReal</a>
     </aside>
+    <div id="options">
+      <form action="/feed" method="post">
+        <label style="color: #ffffff" for="sort">Sort by:</label>
+        <select name="sort" id="sort">
+          <option value="name">Name: A-Z</option>
+          <option value="-name">Name: Z-A</option>
+        </select>
+        <button style="color: white" type="submit">
+          <i class="fa-solid fa-sort" style="color: #415e90"></i>
+        </button>
+      </form>
+    </div>
     <% feed.forEach(element => { %>
     <div id="box">
       <span id="user">

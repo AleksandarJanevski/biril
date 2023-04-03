@@ -4,6 +4,23 @@ exports.getView = async (req, res) => {
     const feed = await bereal.user.find();
     res.status(200).render('feed', { feed: feed });
 };
+exports.sortView = async (req, res) => {
+    const sortingOption = req.body.sort;
+    let feed = await bereal.user.find();
+    console.log(sortingOption);
+    switch (sortingOption) {
+        case 'name':
+            feed = feed.sort((a, b) => a.name.localeCompare(b.name));
+            break;
+        case '-name':
+            feed = feed.sort((a, b) => b.name.localeCompare(a.name));
+            break;
+        default:
+            feed = feed.sort((a, b) => a.name.localeCompare(b.name));
+            break;
+    }
+    res.render('feed', { feed, sortingOption: `?sort=${sortingOption}` });
+};
 exports.getForm = async (req, res) => {
     res.render('form');
 }

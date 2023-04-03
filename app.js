@@ -25,10 +25,12 @@ app.get('/form', view.getForm);
 app.post('/form', view.createUser);
 app.get('/feed', view.getView);
 app.get('/feed/:id', view.getOneView);
-app.post('/feed', view.postComment);
+// app.post('/feed', view.postComment);
 app.post('/feed/delete/:id', view.deleteUser);
 app.post('/feed/:id/:comment', view.deleteComment);
 app.post('/feed/:id', view.updateUser);
+app.post('/feed', view.sortView);
+
 
 app.listen(location.port, err => {
     if (err) console.log(err);

@@ -10,43 +10,45 @@
   <body>
     <%- include('partials/header') %> <br />
     <span><a href="/feed">Go to Feed</a></span>
-    <form action="/form" method="POST">
-      <input
-        type="text"
-        name="name"
-        id="name"
-        placeholder="Enter Name"
-        required
-      /><br />
-      <input
-        type="text"
-        name="profilePicture"
-        id="profilePicture"
-        placeholder="Enter Picutre Url"
-        required
-      /><br />
-      <input
-        type="text"
-        name="caption"
-        id="caption"
-        placeholder="Enter Caption"
-        required
-      /><br />
-      <input
-        type="text"
-        name="image1"
-        id="image1"
-        placeholder="Enter Post image1"
-        required
-      /><br />
-      <input
-        type="text"
-        name="image2"
-        id="image2"
-        placeholder="Enter Post image2"
-        required
-      /><br />
-      <button type="submit">Post BeReal</button>
-    </form>
+    <div class="form-container">
+      <form action="/form" method="POST">
+        <input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Enter Name"
+          required
+        /><br />
+        <input
+          type="text"
+          name="profilePicture"
+          id="profilePicture"
+          placeholder="Profile Picture"
+          required
+        /><br />
+        <input
+          type="text"
+          name="caption"
+          id="caption"
+          placeholder="Enter Caption"
+          required
+        /><br />
+        <input
+          type="text"
+          name="image1"
+          id="image1"
+          placeholder="Small Picture"
+          required
+        /><br />
+        <input
+          type="text"
+          name="image2"
+          id="image2"
+          placeholder="Bigger Picture"
+          required
+        /><br />
+        <button type="submit">Post BeReal</button>
+      </form>
+    </div>
   </body>
 </html>

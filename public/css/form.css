@@ -1,5 +1,4 @@
 body {
-  background-color: #000000;
   opacity: 1;
   background: linear-gradient(135deg, #56565655 25%, transparent 25%) -10px 0/
       20px 20px,
@@ -19,4 +18,55 @@ a {
   color: white;
   font-size: larger;
   font-family: "Roboto Condensed", sans-serif;
+}
+.form-container {
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="text"] {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 400px;
+}
+
+button[type="submit"] {
+  background-color: red;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+button[type="submit"]:hover {
+  background-color: #ffffff;
+  color: red;
+}
+span {
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  font: bold;
 }
