@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/singlepost.css"/>
+    <script
+    src="https://kit.fontawesome.com/898dade302.js"
+    crossorigin="anonymous"
+  ></script>
+    <title><%= feed.name %>'s Profile</title>
+  </head>
+  <body>
+    <%- include('partials/header') %> <br>
+    <aside id="form"><a href="/form">Add New BeReal</a></aside>
+    <aside id="feed"><a href="/feed">Go Back</a></aside>
+      <div id="box">
+        <span id="user">
+          <img src="<%= feed.profilePicture %>" alt="" />
+          <span id="info"
+            ><p><%= feed.name %></p>
+            <p><%= feed.time.toDateString() %></p></span
+          >
+        </span>
+        <div id="separation"></div>
+        <div id="pictures">
+          <img src="<%= feed.image1 %>" alt="" />
+          <img src="<%= feed.image2 %>" alt="" />
+        </div>
+        <div id="caption">
+          <form action="/feed/<%=feed._id%>" method="post">
+            <input type="text" name="caption" value="<%=feed.caption%>">
+            <button type="submit">Save</button>
+          </form>
+          <aside id="delete">
+            <form action="/feed/delete/<%=feed._id%>" method="post">
+              <button type="submit">
+                <i
+                  class="fa-solid fa-trash"
+                  style="color: rgb(182, 182, 182)"
+                ></i>
+              </button>
+            </form>
+          </aside>
+        </div>
+        <div id="comments">
+          <div id="gap"></div>
+          <% if (comments.length < 1) { %>
+            <h2>It's quiet here...</h2>
+          <% } else { %>
+            <% comments.forEach(function(comment) { %>
+              <span>
+                <p><%= comment.name %></p>
+              <p>:  <%= comment.comment %></p>
+              <form action="/feed/<%=feed._id%>>/<%= comment._id %>" method="post">
+                <button type="submit">
+                  <i
+                    class="fa-solid fa-trash fa-shake"
+                    style="color: rgb(182, 182, 182)"
+                  ></i>
+                </button>
+              </form>
+            </span>
+            <% }); %>
+          <% } %>
+        </div>
+      <br />
+  </body>
+</html>

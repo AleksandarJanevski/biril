@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/feed.css" />
+    <script
+      src="https://kit.fontawesome.com/898dade302.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <%- include('partials/header') %> <br />
+    <aside id="form">
+      <a href="/form">Add New BeReal</a>
+    </aside>
+    <% feed.forEach(element => { %>
+    <div id="box">
+      <span id="user">
+        <img src="<%= element.profilePicture %>" alt="" />
+        <span id="info"
+          ><p><%= element.name %></p>
+          <p><%= element.time.toDateString() %></p></span
+        >
+      </span>
+      <div id="separation"></div>
+      <div id="pictures">
+        <img src="<%= element.image1 %>" alt="" />
+        <img src="<%= element.image2 %>" alt="" />
+      </div>
+      <div id="caption">
+        <p><%= element.caption %></p>
+        <a href="/feed/<%= element._id %>"
+          ><i
+            class="fa-regular fa-comment fa-fade"
+            style="color: rgb(182, 182, 182)"
+          ></i
+        ></a>
+        <aside id="delete">
+          <form action="/feed/delete/<%= element._id %>" method="post">
+            <button type="submit">
+              <i
+                class="fa-solid fa-trash fa-shake"
+                style="color: rgb(182, 182, 182)"
+              ></i>
+            </button>
+          </form>
+        </aside>
+      </div>
+      <span id="comment"
+        ><form action="/feed" method="post">
+          <input type="text" required name="name" placeholder="Name" />
+          <input
+            type="text"
+            required
+            name="comment"
+            placeholder="Enter Comment"
+          />
+          <input type="hidden" name="postid" value="<%= element._id %>" />
+          <button type="submit">
+            <i class="fa-solid fa-paper-plane" style="color: #ffffff"></i>
+          </button></form
+      ></span>
+    </div>
+    <br />
+    <% }); %>
+  </body>
+</html>
