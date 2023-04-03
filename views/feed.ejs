@@ -19,11 +19,17 @@
     <div id="options">
       <form action="/feed" method="post">
         <label style="color: #ffffff" for="sort">Sort by:</label>
-        <select name="sort" id="sort">
+        <select
+          name="sort"
+          id="sort"
+          style="color: #415e90; background-color: #ffffff"
+        >
           <option value="name">Name: A-Z</option>
           <option value="-name">Name: Z-A</option>
+          <option value="time">Newest</option>
+          <option value="-time">Oldest</option>
         </select>
-        <button style="color: white" type="submit">
+        <button>
           <i class="fa-solid fa-sort" style="color: #415e90"></i>
         </button>
       </form>

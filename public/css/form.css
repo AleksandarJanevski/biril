@@ -69,4 +69,19 @@ span {
   right: 30px;
   top: 30px;
   font: bold;
+  background-color: white;
+  padding: 10px 20px;
+  transition: all 0.3s ease-in-out;
+  border-radius: 5px;
+}
+span a {
+  color: red;
+  display: block;
+}
+span:hover {
+  background-color: red;
+  color: white;
+}
+span a:hover {
+  color: white;
 }

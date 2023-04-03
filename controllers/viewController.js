@@ -7,13 +7,18 @@ exports.getView = async (req, res) => {
 exports.sortView = async (req, res) => {
     const sortingOption = req.body.sort;
     let feed = await bereal.user.find();
-    console.log(sortingOption);
     switch (sortingOption) {
         case 'name':
             feed = feed.sort((a, b) => a.name.localeCompare(b.name));
             break;
         case '-name':
             feed = feed.sort((a, b) => b.name.localeCompare(a.name));
+            break;
+        case "time":
+            feed = feed.sort((a, b) => new Date(b.time) - new Date(a.time));
+            break;
+        case "-time":
+            feed = feed.sort((a, b) => new Date(a.time) - new Date(b.time));
             break;
         default:
             feed = feed.sort((a, b) => a.name.localeCompare(b.name));
