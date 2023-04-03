@@ -16,16 +16,16 @@ mongoose.connect(location.url, {
 }).then(() => console.log('Successfull Connection to Database'))
     .catch(() => console.log('Error Connecting to Database'));
 
-// app.get('/api/v1/feed', bereal.getAll);
-// app.get('/api/v1/feed:id', bereal.getOne);
-// app.patch('/api/v1/feed:id', bereal.updateUser);
-// app.post('/api/v1/feed:id', bereal.createUser);
-// app.delete('/api/v1/feed', bereal.deleteUser);
+app.get('/api/v1/feed', bereal.getAll);
+app.get('/api/v1/feed:id', bereal.getOne);
+app.patch('/api/v1/feed:id', bereal.updateUser);
+app.post('/api/v1/feed:id', bereal.createUser);
+app.delete('/api/v1/feed', bereal.deleteUser);
 app.get('/form', view.getForm);
 app.post('/form', view.createUser);
 app.get('/feed', view.getView);
 app.get('/feed/:id', view.getOneView);
-// app.post('/feed', view.postComment);
+app.post('/feed', view.postComment);
 app.post('/feed/delete/:id', view.deleteUser);
 app.post('/feed/:id/:comment', view.deleteComment);
 app.post('/feed/:id', view.updateUser);
