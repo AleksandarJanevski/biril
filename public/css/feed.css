@@ -92,10 +92,11 @@ body {
   align-items: center;
   gap: 10px;
   position: relative;
+  margin-left: 20px;
 }
 #delete {
   position: absolute;
-  right: 10px;
+  right: 20px;
 }
 button {
   all: unset;
@@ -192,6 +193,7 @@ header h1 {
   background-color: #ffffff;
   padding: 10px;
   border-radius: 5px;
+  width: 460px;
 }
 
 #comment input[type="text"] {
@@ -230,4 +232,3 @@ header h1 {
   font-size: 20px;
   color: #ffffff;
 }
-/* //////// */
