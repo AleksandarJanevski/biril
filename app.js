@@ -30,7 +30,6 @@ app.post('/feed/delete/:id', view.deleteUser);
 app.post('/feed/:id/:comment', view.deleteComment);
 app.post('/feed/:id', view.updateUser);
 
-
 app.listen(location.port, err => {
     if (err) console.log(err);
     console.log('Service Successfully started on port ' + location.port);
