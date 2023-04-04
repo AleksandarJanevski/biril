@@ -136,7 +136,7 @@ header h1 {
 }
 #form {
   position: absolute;
-  top: 30px;
+  top: 35px;
   right: 30px;
   animation: form 1s ease 0s 1 normal forwards;
 }
