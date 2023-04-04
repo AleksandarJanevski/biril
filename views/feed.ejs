@@ -17,22 +17,13 @@
       <a href="/form">Add New BeReal</a>
     </aside>
     <div id="options">
-      <form action="/feed" method="post">
-        <label style="color: #ffffff" for="sort">Sort by:</label>
-        <select
-          name="sort"
-          id="sort"
-          style="color: #415e90; background-color: #ffffff"
-        >
-          <option value="name">Name: A-Z</option>
-          <option value="-name">Name: Z-A</option>
-          <option value="time">Newest</option>
-          <option value="-time">Oldest</option>
-        </select>
-        <button>
-          <i class="fa-solid fa-sort" style="color: #415e90"></i>
-        </button>
-      </form>
+      <ul>
+        <li style="color: white">Sort by:</li>
+        <li><a href="/feed?sort=name">Name A-Z</a></li>
+        <li><a href="/feed?sort=-name">Name Z-A</a></li>
+        <li><a href="/feed?sort=time">Latest</a></li>
+        <li><a href="/feed?sort=-time">Oldest</a></li>
+      </ul>
     </div>
     <% feed.forEach(element => { %>
     <div id="box">
@@ -53,7 +44,7 @@
         <a href="/feed/<%= element._id %>"
           ><i
             class="fa-regular fa-comment fa-fade"
-            style="color: rgb(182, 182, 182)"
+            style="color: rgb(255, 0, 0)"
           ></i
         ></a>
         <aside id="delete">
@@ -61,7 +52,7 @@
             <button type="submit">
               <i
                 class="fa-solid fa-trash fa-shake"
-                style="color: rgb(182, 182, 182)"
+                style="color: rgb(255, 0, 0)"
               ></i>
             </button>
           </form>

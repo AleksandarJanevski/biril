@@ -57,7 +57,7 @@ body {
     background-color: rgb(255, 255, 255);
   }
   50% {
-    background-color: rgb(111, 111, 111);
+    background-color: rgb(255, 0, 0);
   }
   100% {
     background-color: white;
@@ -118,6 +118,18 @@ header h1 {
   position: absolute;
   top: 30px;
   right: 30px;
+  animation: form 1s ease 0s 1 normal forwards;
+}
+@keyframes form {
+  0% {
+    opacity: 0;
+    transform: translateX(250px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 #form a {
   text-decoration: none;
@@ -130,19 +142,92 @@ header h1 {
 }
 #options {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   position: absolute;
-  top: 30px;
-  left: 30px;
+  top: 20px;
+  left: 0px;
   width: max-content;
   height: max-content;
   gap: 5px;
+  animation: myAnim 1s ease 0s 1 normal forwards;
 }
-#options select {
-  all: unset;
+#options ul {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+#options ul li {
+  display: block;
+}
+#options ul li a {
+  text-decoration: none;
+  color: red;
+  background-color: white;
+  padding: 5px;
+  border-radius: 5px;
+}
+#options ul li a:hover {
+  text-decoration: none;
   color: white;
-  background-color: #555555;
-  border: 2px solid white;
-  border-radius: 10px;
-  padding: 2px;
+  background-color: red;
+  padding: 5px;
+  border-radius: 5px;
 }
+@keyframes myAnim {
+  0% {
+    opacity: 0;
+    transform: translateX(-250px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+#comment form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#comment input[type="text"] {
+  width: calc(50% - 10px);
+  padding: 5px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #000000;
+  background-color: #f0f0f0;
+}
+
+#comment input[type="text"]:focus {
+  outline: none;
+  box-shadow: 0px 0px 2px 2px #ff0000;
+}
+
+#comment input[type="hidden"] {
+  display: none;
+}
+
+#comment button[type="submit"] {
+  padding: 5px 15px;
+  background-color: #ff0000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#comment button[type="submit"]:hover {
+  background-color: #cc0000;
+}
+
+#comment i.fa-paper-plane {
+  font-size: 20px;
+  color: #ffffff;
+}
+/* //////// */

@@ -1,30 +1,22 @@
 const bereal = require('../models/BeRealModel');
 
 exports.getView = async (req, res) => {
-    const feed = await bereal.user.find();
-    res.status(200).render('feed', { feed: feed });
-};
-exports.sortView = async (req, res) => {
-    const sortingOption = req.body.sort;
+    const query = req.query.sort
     let feed = await bereal.user.find();
-    switch (sortingOption) {
-        case 'name':
-            feed = feed.sort((a, b) => a.name.localeCompare(b.name));
-            break;
-        case '-name':
-            feed = feed.sort((a, b) => b.name.localeCompare(a.name));
-            break;
-        case "time":
-            feed = feed.sort((a, b) => new Date(b.time) - new Date(a.time));
-            break;
-        case "-time":
-            feed = feed.sort((a, b) => new Date(a.time) - new Date(b.time));
-            break;
-        default:
-            feed = feed.sort((a, b) => a.name.localeCompare(b.name));
-            break;
+    if (query) {
+        feed = feed.sort((a, b) => {
+            if (query === "name") {
+                return a.name.localeCompare(b.name);
+            } else if (query === "-name") {
+                return b.name.localeCompare(a.name);
+            } else if (query === "time") {
+                return new Date(b.time) - new Date(a.time);
+            } else if (query === "-time") {
+                return new Date(a.time) - new Date(b.time);
+            }
+        });
     }
-    res.render('feed', { feed, sortingOption: `?sort=${sortingOption}` });
+    res.status(200).render('feed', { feed: feed });
 };
 exports.getForm = async (req, res) => {
     res.render('form');
