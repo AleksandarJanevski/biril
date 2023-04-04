@@ -43,7 +43,8 @@ exports.updateUser = async (req, res) => {
 }
 exports.postComment = async (req, res) => {
     await bereal.userComment.create(req.body);
-    res.status(201).redirect('back');
+    console.log(req.body);
+    res.status(201).redirect('/feed/' + req.body.postid);
 };
 exports.deleteComment = async (req, res) => {
     await bereal.userComment.findByIdAndDelete(req.params.comment);

@@ -4,11 +4,29 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(135deg, #56565655 25%, transparent 25%) -10px 0/
-      20px 20px,
-    linear-gradient(225deg, #565656 25%, transparent 25%) -10px 0/ 20px 20px,
-    linear-gradient(315deg, #56565655 25%, transparent 25%) 0px 0/ 20px 20px,
-    linear-gradient(45deg, #565656 25%, #000000 25%) 0px 0/ 20px 20px;
+  background: linear-gradient(135deg, #0000 20.5%, #0c0c0c 0 29.5%, #0000 0) 0
+      16px,
+    linear-gradient(45deg, #0000 8%, #0c0c0c 0 17%, #0000 0 58%) 32px 0,
+    linear-gradient(
+      135deg,
+      #0000 8%,
+      #0c0c0c 0 17%,
+      #0000 0 58%,
+      #0c0c0c 0 67%,
+      #0000 0
+    ),
+    linear-gradient(
+      45deg,
+      #0000 8%,
+      #0c0c0c 0 17%,
+      #0000 0 58%,
+      #0c0c0c 0 67%,
+      #0000 0 83%,
+      #0c0c0c 0 92%,
+      #0000 0
+    ),
+    #252525;
+  background-size: 64px 64px;
 }
 
 h1,
@@ -74,25 +92,15 @@ span {
   right: 30px;
   top: 30px;
   font: bold;
-  background-color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
-  animation: slideInRight 1s ease-in-out;
-}
-
-span:hover {
-  background-color: red;
-  color: white;
 }
 
 span a {
   display: block;
+  padding: 5px;
+  border-radius: 5px;
   color: red;
-  animation: slideInLeft 1s ease-in-out;
-}
-
-span a:hover {
-  color: white;
+  background-color: white;
+  animation: slideInRight 1s ease-in-out;
 }
 
 /* Keyframes */
@@ -126,4 +134,8 @@ span a:hover {
 /* Animation */
 .form-container button {
   animation: slideDown 1s ease-in-out;
+}
+span a:hover {
+  color: white;
+  background-color: red;
 }
