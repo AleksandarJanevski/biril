@@ -31,14 +31,14 @@
         <div id="caption">
           <form action="/feed/<%=feed._id%>" method="post">
             <input type="text" name="caption" value="<%=feed.caption%>">
-            <button type="submit">Save</button>
+            <button type="submit"><i class="fa-solid fa-pen-to-square" style="color: #ffffff;"></i></button>
           </form>
           <aside id="delete">
             <form action="/feed/delete/<%=feed._id%>" method="post">
               <button type="submit">
                 <i
                   class="fa-solid fa-trash"
-                  style="color: rgb(255, 0, 0)"
+                  style="color: rgb(255, 255, 255)"
                 ></i>
               </button>
             </form>

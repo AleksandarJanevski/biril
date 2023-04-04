@@ -93,12 +93,18 @@ body {
 #caption {
   color: white;
   display: flex;
+  background-color: red;
+  padding: 5px;
+  width: 95%;
+  border-radius: 5px;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  gap: 10px;
   position: relative;
   width: 100%;
+}
+#caption i {
+  margin-left: 5px;
 }
 
 #delete {
@@ -108,7 +114,7 @@ body {
 
 #comments {
   align-self: flex-start;
-  color: white;
+  color: red;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -119,6 +125,9 @@ body {
 #comments span {
   display: flex;
   flex-direction: row;
+  background-color: white;
+  padding: 5px;
+  border-radius: 5px;
 }
 
 #comments span i {
@@ -171,7 +180,9 @@ button {
 }
 input {
   all: unset;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.566);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.566);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 @keyframes feed {
   0% {
